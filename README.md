@@ -21,6 +21,7 @@
   - 📊 Analytics Dashboard: Dashboard page to see visualization of user behavior and user–chatbot interactions
 
 ## Project Structure
+```
 Sourchef-Bot
 ├── main.py                  # Contains the streamlit code for the LLM RAG Chatbot
 ├── .venv/                   # Not show in this repo - manage python package and other
@@ -52,10 +53,11 @@ Sourchef-Bot
 ├── requirements.txt          # Python dependencies
 ├── pyproject
 └── README.md
+```
 
 ## Project Architecture
 
-![architecture](https://github.com/abliskan/capstone-project-data-science-1/blob/main/asset/Chatbot-workflow.png)
+![architecture](https://github.com/abliskan/capstone-project-rag/blob/main/asset/RAG-workflow.png)
 
 
 ## Tech Stack
@@ -136,10 +138,10 @@ streamlit run main.py
 ## Project Screenshot
 
 ### Sourchef Bot - Streamlit UI
-![Bot-UI](https://github.com/vnobets7/final_project_ftde_ricky/blob/main/Data-visualization-with-looker-studio/images/SS-System-architecture.PNG)
+![Bot-UI](https://github.com/abliskan/capstone-project-rag/blob/main/asset/SS-RAG-Chatbot-1.PNG)
 
 ### LLM Monitoring - Langfuse
-![Langfuse-Dashboard](https://github.com/vnobets7/final_project_ftde_ricky/blob/main/Data-visualization-with-looker-studio/images/SS-BI-Dashboard.PNG)
+![Langfuse-Dashboard](https://github.com/abliskan/capstone-project-rag/blob/main/asset/Langfuse-dashboard-3.PNG)
 
-## Diclaimer
+## Disclaimer
 This is just experiment project and wasn't a substitute of perfessional nutrition expert or health organization.
