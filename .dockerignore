@@ -1,0 +1,12 @@
+# Ignore Git directory
+.git/
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+
+# Ignore the cache directory
+__pycache__/
+
+# Ignore other unnecessary files
+*.gitignore
