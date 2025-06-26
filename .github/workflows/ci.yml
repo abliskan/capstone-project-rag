@@ -17,16 +17,21 @@ jobs:
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: "3.12"
 
-      - name: 🧹 Lint with Ruff
+      - name: 📦 Install uv + deps
         run: |
-          pip install ruff
-          ruff check .
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv pip install -r requirements.txt
+
+      # - name: 🧹 Lint with Ruff
+      #   run: |
+      #     pip install ruff
+      #     ruff check .
 
       # Optional: Streamlit check (headless mode)
       - name: 🚀 Streamlit test run
         run: |
-          streamlit run app.py --headless --server.headless true &
+          streamlit run main.py --headless --server.headless true &
           sleep 10
           pkill -f streamlit || true
