@@ -1,37 +1,37 @@
-name: 🧪 Python CI
+# name: 🧪 Python CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
-jobs:
-  lint-and-test:
-    runs-on: ubuntu-latest
+# jobs:
+#   lint-and-test:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+#     steps:
+#       - name: 📥 Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
+#       - name: 🐍 Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.12"
 
-      - name: 📦 Install uv + deps
-        run: |
-          curl -LsSf https://astral.sh/uv/install.sh | sh
-          uv pip install -r requirements.txt
+#       - name: 📦 Install uv + deps
+#         run: |
+#           curl -LsSf https://astral.sh/uv/install.sh | sh
+#           uv pip install -r requirements.txt
 
-      # - name: 🧹 Lint with Ruff
-      #   run: |
-      #     pip install ruff
-      #     ruff check .
+#       - name: 🧹 Lint with Ruff
+#         run: |
+#           pip install ruff
+#           ruff check .
 
-      # Optional: Streamlit check (headless mode)
-      - name: 🚀 Streamlit test run
-        run: |
-          streamlit run main.py --headless --server.headless true &
-          sleep 10
-          pkill -f streamlit || true
+#       # Optional: Streamlit check (headless mode)
+#       - name: 🚀 Streamlit test run
+#         run: |
+#           streamlit run main.py --headless --server.headless true &
+#           sleep 10
+#           pkill -f streamlit || true
