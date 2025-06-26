@@ -1,0 +1,37 @@
+name: 🧪 Python CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🧹 Lint with Ruff
+        run: |
+          pip install ruff
+          ruff check .
+
+      # Optional: Streamlit check (headless mode)
+      - name: 🚀 Streamlit test run
+        run: |
+          streamlit run app.py --headless --server.headless true &
+          sleep 10
+          pkill -f streamlit || true
